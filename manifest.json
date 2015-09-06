@@ -1,0 +1,27 @@
+{
+    "manifest_version": 2,
+    "name": "Google Logo Changer",
+    "description": "Reverts Google to previous logo",
+    "version": "1.0",
+    "icons": {
+        "16": "Google-Logo-Changer-icon-16.png",
+        "48": "Google-Logo-Changer-icon-48.png",
+        "128": "Google-Logo-Changer-icon-128.png",
+    },
+    "web_accessible_resources": [
+        "old-logo.svg",
+        "nav-old-logo.png"
+    ],
+    "content_scripts": [
+        {
+            "matches": [
+                "*://*.google.com/*"
+            ],
+            "js": [
+                "background.js"
+            ],
+            "run_at": "document_idle",
+            "all_frames": false
+        }
+    ]
+}
